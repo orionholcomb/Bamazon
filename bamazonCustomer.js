@@ -41,7 +41,7 @@ function userPrompt(inv) {
             type: "input",
             name: "choice",
             message: "Please type the desired item ID or press 'C' to exit",
-            confirm = function(value) {
+            confirm: function(value) {
                 return !isNaN(value) || value.toLowerCase() === "c";
             }
         }
@@ -68,7 +68,7 @@ function userQuantity(product) {
             type: "input",
             name: "quantity",
             message: "Please type the desired amount or press 'C to exit",
-            confirm = function(value) {
+            confirm: function(value) {
                 return val > 0 || value.toLowerCase() === "c";
             }
         }
@@ -111,8 +111,8 @@ function searchDatabase(userChoice, inv) {
 };
 
 // determines if the user pressed 'C' and if they did, ends the current function
-function userQuit(choice) {
-    if (choice.toLowerCase() === "c") {
+function userQuit(userChoice) {
+    if (userChoice.toLowerCase() === "c") {
         console.log( "Please come again!" );
         process.exit(0);
     }
